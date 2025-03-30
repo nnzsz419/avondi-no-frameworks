@@ -1,0 +1,682 @@
+:root {
+  --orange: #EA5616;
+  --blue-highlight: #b3e9ff;
+}
+
+body {
+  margin: 0;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #000;
+  background: #fff;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 0 1.5rem;
+  background: #fff;
+  height: 110px;
+}
+
+.logo img {
+  height: 50px;
+}
+
+.main-nav,
+.secondary-nav {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.primary-link {
+  position: relative;
+  font-weight: 600;
+  padding: 0.75rem 1.25rem;
+  text-decoration: none;
+  color: #000;
+  transition: all 0.75s ease;
+  z-index: 1;
+}
+
+.primary-link::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -12px;
+  width: 100%;
+  height: 100%;
+  transform: translate(6px, 6px);
+  background-color: var(--orange);
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.75s ease;
+}
+
+.primary-link:hover::before {
+  opacity: 1;
+}
+
+.primary-link:hover {
+  background-color: var(--hover-bg, #4B20D1);
+  color: var(--hover-color, #fff);
+}
+
+.secondary-link {
+  position: relative;
+  font-weight: 600;
+  padding: 0.5rem 1.25rem;
+  text-decoration: none;
+  color: #000;
+  transition: all 0.5s ease;
+  overflow: hidden;
+  background-color: transparent;
+  z-index: 1;
+}
+
+.secondary-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 50%;
+  background: var(--blue-highlight);
+  z-index: -1;
+  transition: width 0.5s ease-in-out;
+}
+
+.secondary-link:hover {
+  color: #000;
+}
+
+.secondary-link:hover::after {
+  width: 100%;
+}
+
+/* Mobile Menu Button */
+.menu-toggle {
+  display: none;
+  background: var(--orange);
+  border: none;
+  width: 48px;
+  height: 48px;
+  padding: 0 0.75rem 0 0;
+  cursor: pointer;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 5px;
+}
+
+.mobile-menu-bars {
+  width: 24px;
+  height: 3px;
+  background: #fff;
+  text-align: right;
+}
+
+.top-bar, .bottom-bar {
+  width: 16px;
+}
+
+/* Signup Section */
+.signup-section {
+  background-color: #EA5616;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 3rem 8rem;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.signup-text h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 0 0 1rem;
+  padding-bottom: 2rem;
+  max-width: 500px;
+}
+
+.signup-button {
+  background-color: #B3E9FF;
+  color: #000;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  font-weight: 600;
+  position: relative;
+  z-index: 1;
+  transition: all 0.3s ease;
+}
+
+.signup-button::before {
+  content: "";
+  position: absolute;
+  top: 8px;
+  left: -6px;
+  width: 100%;
+  height: 100%;
+  background-color: #4B20D1;
+  z-index: -1;
+  transition: all 0.3s ease;
+  opacity: 0;
+}
+
+.signup-button:hover::before {
+  opacity: 1;
+}
+
+
+.signup-arrows {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding-right: 2.5rem;
+}
+
+.arrow-shape {
+  width: 110px;
+  height: 120px;
+  background-color: #B3E9FF;
+}
+
+.arrow-top {
+  transform: skewX(30deg);
+}
+
+.arrow-bottom {
+  transform: skewX(-30deg);
+}
+
+/* How it works section */
+.how-it-works {
+  position: relative;
+  z-index: 1;
+  padding: 4rem 8rem;
+  background-color: #fff;
+  transition: background-color 0.4s ease;
+}
+
+.how-header {
+  position: relative;
+  z-index: 5;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 2rem;
+  margin-bottom: 3rem;
+  max-width: 50%;
+}
+
+.how-text {
+  color: #000;
+  flex: 1 1 60%;
+}
+
+.how-text h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.how-text p {
+  line-height: 1.6;
+  color: #000;
+}
+
+.how-chevrons {
+  position: absolute;
+  z-index: 2;
+  top: 16%;
+  right: 5%;
+  display: flex;
+  gap: 8rem;
+  flex-wrap: nowrap;
+  margin-top: 0.5rem;
+  justify-content: flex-end;
+}
+
+.chevron {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.chevron-top {
+  width: 120px;
+  height: 100px;
+  background-color: #E6B8FF;
+  transform: skewX(30deg);
+  transition: background-color 0.4s ease;
+}
+.chevron-bottom {
+  width: 120px;
+  height: 100px;
+  background-color: #E6B8FF;
+  transform: skewX(-30deg);
+  transition: background-color 0.4s ease;
+}
+
+.how-cards {
+  position: relative;
+  z-index: 5;
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 6rem;
+}
+
+.how-card {
+  position: relative;
+  overflow: hidden;
+  flex: 1 1 calc(33.333% - 1.5rem);
+  min-width: 280px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 4px;
+}
+
+.how-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.card-overlay {
+  position: absolute;
+  inset: 0;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 3rem;
+  background: linear-gradient(to top, rgba(0,0,0,0.5), transparent 60%);
+}
+
+.card-overlay small {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  opacity: 0.85;
+}
+
+.card-overlay h3 {
+  margin: 0.5rem 0;
+  font-size: 1.25rem;
+}
+
+.card-overlay p {
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+.card-button-wrapper {
+  margin-top: 1rem;
+}
+
+.card-button {
+  position: relative;
+  background-color: #B3E9FF;
+  color: #000;
+  padding: 0.75rem;
+  text-decoration: none;
+  font-weight: bold;
+  z-index: 1;
+  transition: all 0.3s ease;
+}
+
+.card-button::before {
+  content: "";
+  position: absolute;
+  top: 8px;
+  left: -6px;
+  width: 100%;
+  height: 100%;
+  background-color: #EA5616;
+  z-index: -2;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.card-button:hover::before {
+  opacity: 1;
+}
+
+.how-card.purple .card-overlay {
+  background: linear-gradient(to top, rgba(75, 32, 209, 0.75), transparent 60%);
+}
+
+.how-card.pink .card-overlay {
+  background: linear-gradient(to top, rgba(226, 175, 255, 0.75), transparent 60%);
+}
+
+.how-card.red .card-overlay {
+  background: linear-gradient(to top, rgba(234, 86, 22, 0.75), transparent 60%);
+}
+
+/* Carousel */
+.carousel-signup-section {
+  background-color: #C2EFFF;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 3rem 8rem;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.carousel-signup-text {
+  flex: 1 1 40%;
+}
+
+.carousel-signup-text h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  max-width: 480px;
+}
+
+.carousel-signup-carousel {
+  flex: 1 1 55%;
+  overflow: hidden;
+}
+
+.carousel-track {
+  display: flex;
+  animation: scroll-left 6s linear infinite;
+  gap: 1rem;
+  will-change: transform;
+}
+
+.carousel-slide {
+  min-width: 50%;
+  flex: 0 0 auto;
+}
+
+.carousel-slide img {
+  width: 100%;
+  border-radius: 6px;
+  display: block;
+}
+
+.carousel-slide img:hover ~ .carousel-track,
+.carousel-track:hover {
+  animation-play-state: paused;
+}
+
+.carousel-button {
+  background-color: #490fbd;
+  color: #fff;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  font-weight: 600;
+  position: relative;
+  z-index: 1;
+  transition: all 0.3s ease;
+}
+
+.carousel-button::before {
+  content: "";
+  position: absolute;
+  top: 6px;
+  left: -6px;
+  width: 100%;
+  height: 100%;
+  background-color: #EA5616;
+  z-index: -1;
+  transition: all 0.3s ease;
+  opacity: 0;
+}
+
+.carousel-button:hover::before {
+  opacity: 1;
+}
+
+@keyframes scroll-left {
+  from {
+    transform: translateX(0%);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes scroll-left {
+  from {
+    transform: translateX(0%);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* Slider Cards */
+.sliding-cards {
+  padding: 4rem 8rem;
+  background-color: #fff;
+}
+.card-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: space-between;
+}
+.card-slide {
+  width: 300px;
+  overflow: hidden;
+  border-radius: 6px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  background: #fff;
+  position: relative;
+  touch-action: pan-y;
+}
+.card-content {
+  display: flex;
+  width: 200%;
+  transition: transform 0.4s ease-in-out;
+}
+.card-front,
+.card-back {
+  width: 50%;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: auto;
+}
+.card-front {
+  background: #f5f5f5;
+}
+.card-back {
+  background: #e6f2ff;
+}
+.date {
+  font-size: 0.8rem;
+  color: #888;
+}
+.title {
+  font-weight: bold;
+  margin: 1rem 0;
+}
+.button-wrapper {
+  margin-top: auto;
+}
+.slide-toggle,
+.slide-back {
+  position: relative;
+  font-weight: 600;
+  padding: 0.5rem 1.25rem 0.5rem 0;
+  text-decoration: none;
+  color: #000;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 1;
+  transition: all 0.5s ease;
+}
+.slide-toggle::after,
+.slide-back::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 50%;
+  background: var(--blue-highlight, #b3e9ff);
+  z-index: -1;
+  transition: width 0.5s ease-in-out;
+}
+.slide-toggle:hover::after,
+.slide-back:hover::after {
+  width: 100%;
+}
+.card-icon-mock {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #EA5616;
+  color: #000;
+}
+
+/* Mobile layout */
+@media (max-width: 768px) {
+  .main-nav,
+  .secondary-nav {
+    display: none;
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
+
+  .signup-section {
+    padding: 1rem;
+    flex-direction: column;
+    align-items: flex-end;
+    text-align: left;
+  }
+
+  .signup-text h2 {
+    font-size: 1.25rem;
+  }
+
+  .signup-arrows {
+    flex-direction: column;
+    gap: 0.5rem;
+    padding-right: 1.5rem;
+  }
+
+  .arrow-shape {
+    width: 50px;
+    height: 50px;
+  }
+
+  .how-it-works {
+    overflow: hidden;
+    padding: 4rem 1rem;
+  }
+
+  .how-header {
+    max-width: 100%;
+    flex-direction: column;
+  }
+
+  .how-cards {
+    flex-direction: column;
+  }
+
+  .how-chevrons {
+    top: unset;
+    bottom: -1%;
+    gap: 3rem;
+  }
+
+  .chevron {
+    gap: 0.5rem;
+  }
+
+  .chevron-top, .chevron-bottom {
+    width: 46px;
+    height: 35px;
+  }
+
+  .carousel-signup-section {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .carousel-signup-text h2 {
+    font-size: 1.25rem;
+  }
+
+  .carousel-slide {
+    min-width: 100%;
+  }
+  .carousel-signup-section {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .carousel-signup-text h2 {
+    font-size: 1.25rem;
+  }
+
+  .carousel-slide {
+    min-width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .card-overlay {
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: space-between;
+    padding: 1.5rem 0.75rem;
+    p {
+      display: none;
+    }
+  }
+  .card-button-wrapper {
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+  }
+  .card-button {
+    font-size: 0;
+    position: relative;
+    padding: 1.5rem;
+    min-width: 48px;
+    min-height: 48px;
+  }
+
+  .card-button::after {
+    content: "→";
+    font-size: 1.5rem;
+    color: #000;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .carousel-signup-section {
+    padding: 3rem 1rem;
+  }
+  .carousel-track {
+    align-items: center;
+    max-height: 370px;
+  }
+  .sliding-cards {
+    padding: 4rem;
+  }
+}
+
